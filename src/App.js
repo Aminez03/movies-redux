@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import './App.css';
+import AddNewmovie from './Components/AddNewmovie';
+import MoviesList from './Components/MoviesList';
+import Navbar from './Components/Navbar'
 
 function App() {
+  const list=useSelector(state=>state.list)
+  console.log(list)
+
+  const [rating, setRating] = useState(0)
+  const [searching, setSearching] = useState("")
+  const handleRating=(z)=>setRating(z);
+  const handleSearch=(y)=>setSearching(y);
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Navbar searching={searching} rating={rating} handleRating={handleRating} handleSearch={handleSearch}/>
+    <MoviesList data={list.filter(el=>el.name.toLocaleLowerCase().includes(searching.toLocaleLowerCase())&& el.rating>=rating)}/>
+    <AddNewmovie />
     </div>
   );
 }
