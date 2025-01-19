@@ -38,29 +38,114 @@
     transform: rotate(360deg);
   }
 }
-body{
-  background-image: linear-gradient(-20deg, #6e6884 0%, #755a5a 100%);
+body {
+  background-color: #f4f4f4; /* Couleur de fond gris clair */
+  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/03ad76d1-e184-4d99-ae7d-708672fa1ac2/web/TN-fr-20241111-TRIFECTA-perspective_1fdc9b25-f8d8-4528-a402-9f6ae2880d1b_small.jpg");
+  background-size: cover; /* L'image remplit l'écran en gardant ses proportions */
+  background-repeat: no-repeat; /* Empêche la répétition de l'image */
+  background-position: center; /* Centrage de l'image */
+  color: #333; /* Couleur du texte */
+  margin: 0; /* Supprime les marges par défaut */
+  padding: 0; /* Supprime les espacements par défaut */
+  font-family: 'Roboto', sans-serif; /* Police moderne */
+  min-height: 100vh; /* Assure que la hauteur couvre toute la fenêtre */
+  opacity: 5; 
+  background-size: cover;
+  overflow-y: auto;
+  -webkit-tap-highlight-color: transparent;
 }
-.navbar{
-  width: 100%;
-  height: 10%;
-  background-color: #8d5252;
-  
-  display: block;
+
+ /* .navbar {
   position: fixed;
-  top:0px;
-  
-  
+  top: 0;
+  background-color: #ba5757;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
+
+
+
+}  */
+.navbar a {
+  font-size: 22px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar {
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  height: 100px;
+
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  font-size: 5rem;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-link .icon {
+  margin-right: 8px;
+  font-size: 22px;
+}
+
+.nav-link:hover {
+  color: #ffc107;
+  background-color: #343a40;
+  border-radius: 5px;
+}
+
+.form-select {
+width: 400px;
+
+}
+
+.navbar-toggler {
+  border: none;
+  margin-left: 50px;
+}
+.navbar-brand{
+  color: #958a68;
+  font-size: 30px!important;
+}
+.navbar-collapse{
+  margin-left: 100px;
+  color: yellow!important;
+
+}
+.custom-select {
+  font-size: 17px!important; 
+  font-weight: 700!important;/* Taille de la police */
+  width: 200px!important;    /* Largeur */
+
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
 .movielist{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  margin-top: 100px;
-
-  
+  margin-top: 70px;
+  opacity: 100;
 }
 .movieCard{
   border-radius: 6px;
@@ -68,40 +153,39 @@ body{
   margin: 1rem;
   widows: 350px;
   box-shadow: 0px 8px 20px 0px rgb(18, 7, 41) ;
-  width: 400px;
+  width: 350px;
+
   cursor: pointer;
 }
 .movieCard > img{
   width: 100%;
-  height:400px;
-  margin-top: -27px;
-  margin-bottom: -20px;
+  height: 400px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
  p {
-  color:rgb(31, 4, 4);
+  color:rgb(206, 31, 31);
   padding: 0.5rem;
-  font-size: 30px;
+  font-size: 40px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 
 }
 .movieCard > h1 {
-  color:rgb(225, 223, 234);
-  padding: 0.5rem;
-  background-color: rgba(16, 15, 15, 0.685);
-  width: 385px;
-  margin-top: 0px;
-  border-radius: 6px;
-  height: 50px;
-  font-family: 'Lato', open-sans;
-  font-size: 40px;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  margin-bottom: -1%;
   
 }
 .blaka{
-  background-color: #ba5757;
+  background-color: #000000;
   opacity :0.9;
-  width: 400px;
+  width: 350px;
   height: 300px;
   margin-top: -280px;
   display: none;
@@ -115,50 +199,145 @@ body{
   margin-top: 50px;
 
 }
-#btn {
-    padding: 40px;
-    background: rgb(72, 0, 255);
-    padding: 10px 50px;
-    border-radius: 4px;
-    color: #fff;
-    font-weight: 700;
-    text-decoration: none;
-    border: none;
-    box-shadow: 10px 10px  rgba(rgb(10, 11, 10),7);
-    cursor: pointer;
-    font-size: 16px;
-    transition: .3s ease-in;
-    opacity: 1;
-    margin-top: 7px;
-    
+/* Style de base du bouton */
+#btnn {
+  padding: 10px 50px;
+  background: rgb(153, 35, 19);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 10px 10px rgba(10, 11, 10, 0.7);
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease-in, transform 0.3s ease-in;
+  margin-top: 7px;
 }
-.btn:hover {
-  background: lighten(red, 5);
-  cursor: pointer;}
-  form{
-    border-radius: 6px;
-    background-color: #ba5757;
-    font-size: 20px;
-    height: 20rem;
-    width: 20rem;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-  }
-  label{
-    padding-top: 20px;
-    margin-top: -15px;
-  }
-  input{
-    font-size: 20px;
-    margin-top: 10px;
-  }
-  .btn{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
 
-  }
+/* Effet de survol */
+#btnn:hover {
+  background: rgb(200, 50, 30);
+  transform: scale(1.05);
+}
+
+/* Bouton désactivé */
+#btn-disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Style du bouton principal */
+#btn {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  margin: 10px;
+}
+
+#btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Style du modal */
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.ReactModal__Content {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Labels */
+form label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Champs de saisie */
+form input[type="text"],
+form input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+form input[type="text"]:focus,
+form input[type="date"]:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Conteneur pour les boutons d'action */
+form .btn {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Style des boutons Save et Cancel */
+form .btn button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+form .btn button#btn[type="submit"] {
+  background-color: #28a745;
+  color: #fff;
+}
+
+form .btn button#btn[type="submit"]:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+form .btn button#btn[type="button"] {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+form .btn button#btn[type="button"]:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+/* Style de la section de notation */
+.rating {
+  text-align: center;
+  margin-top: 10px;
+}
+
   .rating{
     margin-top: 10px;
     margin-bottom: -10px;
@@ -167,49 +346,39 @@ body{
   }
 
     #btnnew{
-   
-      width: 200px;
-      height: 72px;
-      line-height: 40px;
-      font-size: 18px;
-      font-family: sans-serif;
-      text-decoration: none;
-      color: rgb(248, 245, 245);
-      background-color: #ba5757;
-      border: none;
-      letter-spacing: 2px;
-      text-align: center;
-      display: block;
-      transition: all .35s;
-      top:0 ;
-      position: fixed;
-      cursor: pointer;
-      border-bottom-right-radius:  50px;
-
+      
+        background-color: #ba5757;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
     }
     .search{
-      height: 50px;
+      height: 80px;
       align-items: center;
-      margin-left: 600px;
-      background-color: #ba5757;
-      padding-top: 0px;
-      padding-bottom: -20px;
-      width: 350px;
+      margin-left: 100px;
+      background-color: #4F1E1E;
+      padding-top: -1px;
+      border-radius: 10%;
+      width: 400px;
    
       
       
     }
-    .Search1{
-      margin-left: -300px;
-      padding-top: -80px;
+    .SearchTitle{
+      margin-left: -250px;
+      padding-top: -50px;
       color: rgb(248, 245, 245);
       font-family: sans-serif;
       line-height: 40px;
       font-size: 18px;
       
     }
-    .Search2{
-      margin-top: -45px;
+    .SearchInput{
+      margin-top: -50px;
       margin-left: 60px;
     }
     .home{
@@ -218,58 +387,117 @@ body{
       text-decoration: none;
       color: white;
       position: relative;
+      border-radius: 5%;
       
     }
-   
-    .details{
-      width: 800px;
-      height: 600px;
-      background-color: #8a6363;
-      margin-top: 100px;
+    .details {
+      text-align: center;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin:150px;
       margin-left: 350px;
-      box-shadow: 0px 0px 120px -25px rgba(0, 0, 0, 0.5);
-      border-radius: 20px;
-      margin-bottom: 70px;
-      box-shadow: rgba(129, 61, 61, 0.4) -5px 5px,  rgba(129, 61, 61, 0.4) -10px 10px,rgba(129, 61, 61, 0.4) -15px 15px,  rgba(129, 61, 61, 0.4) -20px 20px,  rgba(129, 61, 61, 0.4) -25px 25px;
-      
-    }
-  
-    .imageDetails{
-      width: 800px;
-      height: 350px;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-     
-      
+      margin-bottom: 40px;
     }
     
-    .trailerDetails{
-      width:300px ;
-      height:350px;
-      margin-top: -350px;
-      margin-left: 50px;
-      z-index:2;
-   
-      
+    .backButton {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+      margin-bottom: 20px;
     }
-    .namedetails{
-      margin-left: 10px;
-      margin-top: 180px;
-      color: white;
-      font-size: 44px;
-      width: 400px;
-      
+    
+    .icon {
+      margin-right: 8px;
+    }
+    
+    .imageDetails {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .namedetails {
+      margin: 20px 0;
+      font-size: 24px;
+      color: #333;
+    }
+    
+    .decDetails {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #555;
+    }
+    
+    .trailerDetails {
+      margin-top: 20px;
+    }
+    
+    .trailerDetails iframe {
+      border-radius: 10px;
+      border: none;
+    }
+    
+
+
+    .movies-list-container {
+      margin: 110px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      opacity: 100;
+    }
+    
+    .movies-list-title {
+      font-size: 28px; /* Augmenter la taille de la police pour un effet plus marquant */
+      font-weight: 600;
+      color: #2c3e50; /* Couleur du texte */
+      margin-bottom: -80px;
       text-align: center;
-      position: absolute;
-      
+      text-transform: uppercase; /* Mettre le texte en majuscules pour plus de présence */
+      letter-spacing: 2px; /* Espacement entre les lettres pour une meilleure lisibilité */
+      padding: 10px; /* Ajouter un peu d'espace autour du texte */
+      background-color: #f4f4f4; /* Fond léger pour faire ressortir le texte */
+      border-radius: 8px; /* Coins arrondis */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
+      transition: all 0.3s ease-in-out; /* Transition douce */
     }
-    .decDetails{
-      margin-left: 380px;
-      font-family: 'Roboto', sans-serif;
-      color: rgb(255, 255, 255);
-      font-weight: 380;
-      font-size:20px ;
-      width: 420px;
-      text-align: start;
+    
+    /* Effet au survol pour une interaction visuelle */
+    .movies-list-title:hover {
+      color: #ba5757; /* Change la couleur au survol */
+      transform: scale(1.05); /* Agrandissement léger au survol */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Ombre plus marquée */
+   
     }
-  
+    
+
+    .pagination {
+      margin-top:-10px;
+      margin-bottom: -10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+    .dashboard-container {
+      margin-top: 150px;
+      background-size: cover;
+      padding: 20px;
+      border-radius: 10px;
+   
+    }
+    
+
+    
+  .containercategorie{
+
+    background-color: white;
+  }
